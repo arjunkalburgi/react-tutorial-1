@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      var Hello = React.createClass({
+        render: function() {
+          return (<div>
+                    <h2>{this.props.children}</h2>
+                    <button onclick="">Edit</button>
+                  </div>);
+        }
+      })
+
+      ReactDOM.render(
+        <div>
+          <Hello>World</Hello>
+          <Hello>World</Hello>
+        </div>,
+        document.getElementById('root')
+      );
+
+    </script>
+  </body>
+</html>

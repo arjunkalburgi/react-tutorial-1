@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>React stuff by Arjun</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+	<div id="root"></div>
+
+	<script type="text/babel">
+
+		var Comment = React.createClass({
+			edit: function() {alert("edit");},
+
+			remove: function() {alert("remove");},
+
+			render: function() {
+				return (
+					<div>
+						<h3>{this.props.children}</h3>
+						<button onClick={this.edit}>Edit</button>
+						<button onClick={this.remove}>Remove</button>
+					</div>
+				);
+			}
+		})
+
+		ReactDOM.render(
+				<div>
+					<Comment>Eggs</Comment>
+					<Comment>Bacon</Comment>
+					<Comment>Avocado</Comment>
+				</div>,
+				document.getElementById('root')
+			);
+
+	</script>
+</body>
+</html>
